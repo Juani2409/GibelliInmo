@@ -4,12 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gibelli Estudio Inmobiliario</title>
-  
-      
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            overflow: hidden; /* Evita cualquier scroll */
+        }
+        video {
+            width: 100vw; /* El video siempre ocupará el ancho completo */
+            height: auto;  /* Mantener la relación de aspecto sin generar scroll vertical */
+            display: none; /* Ocultar por defecto */
+        }
+        /* Mostrar el video en modo landscape */
+        @media (orientation: landscape) {
+            #video-horizontal {
+                display: block;
+            }
+        }
+        /* Mostrar el video en modo portrait */
+        @media (orientation: portrait) {
+            #video-vertical {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <h1>Hola</h1>
+    <!-- Video en modo horizontal -->
+    <video id="video-horizontal" autoplay loop muted playsinline>
+        <source src="/videos/Gibelli_Video.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de videos.
+    </video>
+
+    <!-- Video en modo vertical -->
+    <video id="video-vertical" autoplay loop muted playsinline>
+        <source src="/videos/Gibelli_VideoVertical.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de videos.
+    </video>
 
 </body>
 </html>
